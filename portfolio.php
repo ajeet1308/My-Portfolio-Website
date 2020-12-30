@@ -1,6 +1,55 @@
 <?php
+require_once "pdo.php";
+session_start();
+
+if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
+
+	$name=htmlentities($_POST['name']);
+	$email=htmlentities($_POST['email']);
+	$feedback=htmlentities($_POST['feedback']);
+	
+	if (strlen($name) < 1) {
+		$_SESSION['error']="Name field is compulsory!!";
+		header('Location: portfolio.php');
+		return;
+	}
+
+	elseif (strlen($email) < 1) {
+		$_SESSION['error']="E-mail field is compulsory!!";
+		header('Location: portfolio.php');
+		return;
+	}
+
+	elseif (strlen($feedback) < 1) {
+		$_SESSION['error']="Feedback field is compulsory!!";
+		header('Location: portfolio.php');
+		return;
+	}
+
+	elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		$_SESSION['error'] = "Invalid email format";
+		header('Location: portfolio.php');
+		return;
+	}
+
+	else{
+
+		$sql="INSERT INTO users (user_name,user_email,user_feedback) VALUES (:name,:email,:feedback)";
+		$stmt=$pdo->prepare($sql);
+		$result=$stmt->execute(array(':name'=>$name,
+							 ':email'=>$email,
+							 ':feedback'=>$feedback));
+
+		$_SESSION['success']="Thanks $name for your feedback :) We will work on your feedback and will update you soon!!";
+		header('Location: portfolio.php');
+		return;
+	}
+
+}
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,12 +117,25 @@
 			 </address><br>
 		    <h2>Feedback</h2>
 			<p class="feed">Hi viewers!<br> I would be pleased to hear feedback on this mobo view of mine website.</p><br>
-			<form>
+			<form method="POST">
 				<input type="text" name="name" placeholder="Name" id="name"><br><br>
 				<input type="text" name="email" placeholder="E-mail" id="email"><br><br>
 				<input type="text" name="feedback" placeholder="Please write Your Feedback here" id="feedback"><br><br>
 				<input type="submit" name="submit" value="Submit" id="submit"><br><br>
 			</form>
+
+			<?php
+			if (isset($_SESSION['error'])) {
+				echo('<p style="color:#ff0a54;font-size:20px">'.htmlentities($_SESSION['error'])."</p>\n");
+				unset($_SESSION['error']);
+			}
+			if (isset($_SESSION['success'])) {
+				echo('<p style="color:#70e000;font-size:20px">'.htmlentities($_SESSION['success'])."</p>\n");
+				unset($_SESSION['success']);
+			}
+
+			?>
+
 		</article>
 	</div>
 
@@ -100,7 +162,13 @@
 			Copyright &copy; Ajeet Kumar Jaiswal. All Rights Reserved
 		</div>
 	</footer>
-	<script type="text/javascript">
+
+
+</body>
+</html>
+
+<!--jquery script-->
+<script type="text/javascript">
 		$(function(){
 			$(".scrollTo").on('click',function(){
 				$("html, body").animate({
@@ -108,6 +176,4 @@
 				}, 1000)
 			})
 		})
-	</script>
-</body>
-</html>
+</script>
