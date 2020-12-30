@@ -10,25 +10,25 @@ if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
 	
 	if (strlen($name) < 1) {
 		$_SESSION['error']="Name field is compulsory!!";
-		header('Location: portfolio.php');
+		header('Location: portfolio.php#section3');
 		return;
 	}
 
 	elseif (strlen($email) < 1) {
 		$_SESSION['error']="E-mail field is compulsory!!";
-		header('Location: portfolio.php');
+		header('Location: portfolio.php#section3');
 		return;
 	}
 
 	elseif (strlen($feedback) < 1) {
 		$_SESSION['error']="Feedback field is compulsory!!";
-		header('Location: portfolio.php');
+		header('Location: portfolio.php#section3');
 		return;
 	}
 
 	elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$_SESSION['error'] = "Invalid email format";
-		header('Location: portfolio.php');
+		header('Location: portfolio.php#section3');
 		return;
 	}
 
@@ -41,7 +41,7 @@ if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
 							 ':feedback'=>$feedback));
 
 		$_SESSION['success']="Thanks $name for your feedback :) We will work on your feedback and will update you soon!!";
-		header('Location: portfolio.php');
+		header('Location: portfolio.php#section3');
 		return;
 	}
 
@@ -107,7 +107,7 @@ if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
 		<article class="portfolio-info" id="section2">
 			<h2>Portfolio | CV</h2>
 		    <div class="pdf"></div>
-			<p style="margin-top: 10px">Hey! Here with I have attached my Resume if you wants more info about me.You are free to vist my <a href="#" style="color:wheat;text-decoration: none">linkeden</a> Profile.
+			<p style="margin-top: 10px">Hey! Here with I have attached my Resume if you wants more info about me.You are free to vist my <a href="#" style="color:wheat;text-decoration: none">LinkedIn</a> Profile.
 			</p>
 		</article>
 		<article class="contact-info" id="section3">
