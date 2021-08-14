@@ -58,7 +58,9 @@ if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Ajeet Kumar Jaiswal | Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="portfolio.css">
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="index.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://
+	stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 
 	
@@ -80,20 +82,20 @@ if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
 	</nav>
 	<h2>Hi,I'm Ajeet Kumar Jaiswal</h2>
 	<article class="article">
-	<h2>Hi,I'm Ajeet Kumar Jaiswal</h2>
-	<h1>Full Stack Web Developer</h1>
-	<h3>Welcome ! TO My Portfolio Website</h3>
-	<h3 id="follow-on">FOLLOW ON</h3>
+	<h2><a href="" style="text-decoration: none;color: inherit;"class="typewrite" data-period="2000" data-type='[ "HI, THIS IS  AJEET KUMAR JAISWAL."]'><span class="wrap"></span></a></h2>
+	<h1><a href="" style="text-decoration: none;color: #e1c814;"class="typewrite" data-period="2000" data-type='[ "I AM A FULL STACK WEB DEVELOPER." ]'><span class="wrap"></span></a></h1>
+	<h3><a href="" style="text-decoration: none;"class="typewrite" data-period="2000" data-type='[ "WELCOME TO MY WEBSITE."]'><span class="wrap"></span></a></h3>
+	<h3 id="follow-on"><a class="scrollTo" href="#section1" style="text-decoration: none; color: #775656;">FOLLOW ON</a></h3>
 	<p id="arrow"><i class="fa fa-arrow-down" aria-hidden="true"></i></p>
     </article>
 	<div class="wrapper">
 		<article class="img-info" id="section1">
 			<h2 id="test">About me</h2>
-		    <div class="img"></div>
+		    <a href="https://drive.google.com/file/d/1ia36Wog4iBv4agdrGvK2bSsjewT7_cNH/view"><div class="img"></div></a>
 		    <article id="info" style="margin-top: 30px">
 			<p>Hi I am Ajeet . I am Second Year student at IIIT Jabalpur and currently studying Electronics and communication engineering here at IIIT Jabalpur.In past two years I learnt some good skills and tried to build some real time web applications.</p>
 			<p>I am also a full stack web developer and tried to build some cool stuffs like a login signup system and in continue of all this currently I am working building some more stuffs like this.</p>
-			<p>I am also a Machine learning enthusiast and learning new skills day by day.</p>
+			<p>I am also a Machine learning enthusiast and learning new skills day by day,as well I am also enthusiastic in competitive programming and learning new data sturctures. </p>
 		    </article>
 		</article>
         <script type="text/javascript">
@@ -106,17 +108,18 @@ if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
 		</script>
 		<article class="portfolio-info" id="section2">
 			<h2>Portfolio | CV</h2>
-		    <div class="pdf"></div>
-			<p style="margin-top: 10px">Hey! Here with I have attached my Resume if you wants more info about me.You are free to vist my <a href="#" style="color:wheat;text-decoration: none">LinkedIn</a> Profile.
+		    <a href="https://drive.google.com/file/d/1FCxymHZFUHfhGjexmbZ6xHs8QkeKXd75/view"><div class="pdf"></div></a>
+		    <p>Please click on the above image to download the Resume</p>
+			<p style="margin-top: 10px">Hey! Here with I have attached my Resume if you wants more info about me.You are free to vist my <a href="https://github.com/ajeet1308" style="color:wheat;text-decoration: none; font-size: 20px">LinkedIn</a> Profile.
 			</p>
 		</article>
 		<article class="contact-info" id="section3">
 			<h2>Contact</h2>
 			<p class="feed">Want to Connect! Please mail me at <address>
-				<a href="mailto:ajeetj1308@gmail.com" style="color:wheat; text-decoration: none; font-family: arial"><i class="fa fa-envelope" aria-hidden="true"></i> ajeetj1308@gmail.com</a></p>
+				<a href="mailto:ajeetj1308@gmail.com" style="color:#46e512; text-decoration: none;"><i class="fa fa-envelope" aria-hidden="true"></i> ajeetj1308@gmail.com</a></p>
 			 </address><br>
 		    <h2>Feedback</h2>
-			<p class="feed">Hi viewers!<br> I would be pleased to hear feedback on this mobo view of mine website.</p><br>
+			<p class="feed">Hi viewers!,I would be pleased to hear your feedbacks.</p><br>
 			<form method="POST">
 				<input type="text" name="name" placeholder="Name" id="name"><br><br>
 				<input type="text" name="email" placeholder="E-mail" id="email"><br><br>
@@ -138,23 +141,22 @@ if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
 
 		</article>
 	</div>
-
 	<footer class="footer">
 		<div class="inner-footer">
 			<div class="social-links">
 				<ul>
-					<li class="social-items"><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+					<li class="social-items"><a href="https://www.facebook.com/profile.php?id=100040654711182"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
 					<li class="social-items"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-					<li class="social-items"><a href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-					<li class="social-items"><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+					<li class="social-items"><a href="https://github.com/ajeet1308"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+					<li class="social-items"><a href="https://www.linkedin.com/in/ajeet-kumar-jaiswal-b60a541b1/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
 				</ul>
 			</div>
 		    <div class="quick-links">
 				<ul>
 					<li class="quick-items"><a href="#">HOME</a></li>
-					<li class="quick-items"><a href="#">PORTFOLIO</a></li>
-					<li class="quick-items"><a href="#">ABOUT ME</a></li>
-					<li class="quick-items"><a href="#">CONTACT</a></li>
+					<li class="quick-items" class="scrollTo"><a href="#section2">PORTFOLIO</a></li>
+					<li class="quick-items" class="scrollTo"><a href="#section1">ABOUT ME</a></li>
+					<li class="quick-items" class="scrollTo"><a href="#section3">CONTACT</a></li>
 				</ul>
 		    </div>
 	    </div>
@@ -166,14 +168,12 @@ if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
 
 </body>
 </html>
-
-<!--jquery script-->
 <script type="text/javascript">
-		$(function(){
-			$(".scrollTo").on('click',function(){
-				$("html, body").animate({
-					scrollTop:$($.attr(this, 'href')).offset().top-79
-				}, 1000)
-			})
+	$(function(){
+		$(".scrollTo").on('click',function(){
+		    $("html, body").animate({
+		        scrollTop:$($.attr(this, 'href')).offset().top-79
+		    }, 1000)
 		})
+	})
 </script>
