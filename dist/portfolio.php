@@ -1,13 +1,21 @@
 <?php
-require_once "pdo.php";
 session_start();
 
+    
 if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
-
 	$name=htmlentities($_POST['name']);
 	$email=htmlentities($_POST['email']);
+	$to="ajeetj1308@gmail.com";
+	$subject="Website Feedback";
+	$headers="From: $email\n";
 	$feedback=htmlentities($_POST['feedback']);
-	
+	$message="Name:$name\n Email Address:$email\n Message:$feedback";
+
+	$user="$email";
+	$usersubject="Thank You";
+	$userheaders="From:ajeetj1308@gmail.com\n";
+	$usermessage="Thank you for your valuable feedback.";
+
 	if (strlen($name) < 1) {
 		$_SESSION['error']="Name field is compulsory!!";
 		header('Location: portfolio.php#section3');
@@ -33,22 +41,15 @@ if(isset($_POST['submit']) || isset($_POST['name']) || isset($_POST['email'])){
 	}
 
 	else{
-
-		$sql="INSERT INTO users (user_name,user_email,user_feedback) VALUES (:name,:email,:feedback)";
-		$stmt=$pdo->prepare($sql);
-		$result=$stmt->execute(array(':name'=>$name,
-							 ':email'=>$email,
-							 ':feedback'=>$feedback));
-
+		mail('ajeetj1308@gmail.com',$subject,$message,$headers);
+		mail($user,$usersubject,$usermessage,$userheaders);
 		$_SESSION['success']="Thanks $name for your feedback :) We will work on your feedback and will update you soon!!";
 		header('Location: portfolio.php#section3');
 		return;
 	}
-
 }
 
 ?>
-
 
 
 <!DOCTYPE html>
